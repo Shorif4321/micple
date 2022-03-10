@@ -173,19 +173,28 @@ const Traffic = () => {
         <table className="table-box">
           <tr>
             <th>ID</th>
-            <th>Campaign Type</th>
-            <th>CPA Type</th>
-            <th>CPA Rate</th>
+            <th>Name</th>
+            <th>Types</th>
+            <th>Rates</th>
             <th>EPC</th>
             <th>Traffic</th>
           </tr>
           <tr>
+            <td>
+              1645 <i class="fas fa-eye"></i>
+            </td>
             <td>Freecode Camp</td>
-            <td>Freecode Camp</td>
-            <td>Enki</td>
-            <td>Enki</td>
-            <td>Enki</td>
-            <td>Enki</td>
+            <td>Fixed</td>
+            <td>1.6$ per Lead</td>
+            <td>0.04</td>
+            <td>
+            <i class="fas fa-copy"></i>
+              <i class="fas fa-mobile-android"></i>
+              <i class="fas fa-images"></i>
+              <i class="fas fa-search"></i>
+              <i class="fas fa-desktop"></i>
+              <i class="fab fa-facebook-square"></i>
+            </td>
           </tr>
           <tr>
             <td>W3Schools</td>
