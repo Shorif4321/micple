@@ -9,6 +9,7 @@ const Traffic = () => {
   const [sbuCategories, setsubCategories] = useState([]);
   const [cpas, setCpas] = useState([]);
   const [traffics, setTraffics] = useState([]);
+  const [details, setDetails] = useState([]);
 
   useEffect(() => {
     fetch("./Traffic.JSON")
@@ -46,6 +47,18 @@ const Traffic = () => {
       .then(data => setTraffics(data))
   }, []);
 
+  useEffect(() => {
+    fetch("./Details.JSON")
+      .then(res => res.json())
+      .then(data => setDetails(data.slice(0,25)))
+  }, []);
+
+
+  const handleSearch = (e)=>{
+    const value = e.target.value;
+    console.log(value)
+  }  
+
   const handleTrafficType = (e) =>{
     const value = e.target.value;
     console.log(value);
@@ -72,17 +85,18 @@ const Traffic = () => {
   }
 
   return (
-    <div className=" container mt-5 ">
+    <div className="container mt-5">
       {/* ==== Search Bar start === */}
-      <div className="mb-3 row">
-        <div className="col-sm-2">
+      <div className="search-item mb-lg-3 mb-lg-5 row">
+        <div className="col-4 col-sm-2 col-md-2">
           <label htmlFor="" className="searchText col-form-label">
             Searching for
           </label>
         </div>
-        <div className="col-sm-10">
+        <div className="col-sm-9 col-md-10">
           <form className="">
             <input
+              onChange={handleSearch}
               className="searchField form-control me-2"
               placeholder="Enter the Company Name, Keyword or Designation"
               type="search"
@@ -93,15 +107,15 @@ const Traffic = () => {
       </div>
 
       {/* ==== Traffic type start  === */}
-      <div className="trafficType d-md-flex mt-5">
+      <div className="trafficType d-md-flex ">
         <div className="col-md-5 ">
           <div className="mb-3 row d-flex">
-            <div className="col-md-4">
+            <div className="col-4 col-sm-3 col-md-4">
               <label htmlFor="" className="searchText me-4 col-form-label">
                 Traffic Type
               </label>
             </div>
-            <div className="col-sm-8">
+            <div className="col-sm-9  col-md-8">
               <select
                 className="form-select searchField"
                 aria-label="Default select example"
@@ -117,13 +131,13 @@ const Traffic = () => {
         </div>
 
         <div className="col-md-5">
-          <div className="mb-3 row d-flex">
-            <div className="col-md-4">
+          <div className=" row d-flex">
+            <div className="col-3 col-md-4">
               <label htmlFor="" className="searchText">
                 Geography
               </label>
             </div>
-            <div className="col-md-8">
+            <div className="col-sm-9 col-md-8">
               <select
                 className="form-select searchField"
                 aria-label="Default select example"
@@ -143,15 +157,15 @@ const Traffic = () => {
 
       {/* ++ Category Start +++  */}
 
-      <div className="trafficType d-md-flex mt-5">
+      <div className="trafficType d-md-flex mb-3">
         <div className="col-md-5 ">
-          <div className="mb-3 row d-flex">
-            <div className="col-md-4">
+          <div className=" row d-flex">
+            <div className="col-3 col-md-4">
               <label htmlFor="" className="searchText me-4 col-form-label">
                 Category
               </label>
             </div>
-            <div className="col-sm-8">
+            <div className="col-sm-9 col-md-8">
               <select
                 className="form-select searchField"
                 aria-label="Default select example"
@@ -167,14 +181,14 @@ const Traffic = () => {
         </div>
 
         <div className="col-md-5">
-          <div className="mb-3 row d-flex">
-            <div className="col-md-4">
+          <div className=" row d-flex">
+            <div className="col-4 col-sm-3 col-md-4">
               <label htmlFor="" className="searchText  col-form-label">
                 Sub Category
               </label>
             </div>
 
-            <div className="col-md-8">
+            <div className="col-sm-9 col-sm-9 col-md-8">
               <select
                 className="form-select searchField"
                 aria-label="Default select example"
@@ -191,15 +205,15 @@ const Traffic = () => {
       </div>
 
       {/* +++ Filter Option ++++ */}
-      <div className="trafficType d-md-flex mt-5">
+      <div className="trafficType d-md-flex">
         <div className="col-md-5 ">
           <div className="mb-3 row d-flex">
-            <div className="col-md-4">
+            <div className="col-3 col-md-4">
               <label htmlFor="" className="searchText me-4 col-form-label">
                 Filter
               </label>
             </div>
-            <div className="col-sm-8">
+            <div className="col-sm-9 col-md-8">
               <select
                 className="form-select searchField"
                 aria-label="Default select example"
@@ -216,12 +230,12 @@ const Traffic = () => {
 
         <div className="col-md-5">
           <div className="mb-3 row d-flex">
-            <div className="col-md-4">
+            <div className="col-3 col-md-4">
               <label htmlFor="" className="searchText">
                 CPA Type
               </label>
             </div>
-            <div className="col-md-8">
+            <div className="col-sm-9 col-md-8">
               <select
                 className="form-select searchField"
                 aria-label="Default select example"
@@ -255,14 +269,15 @@ const Traffic = () => {
             <th>EPC</th>
             <th>Traffic</th>
           </tr>
-          <tr className="first-colum">
+          {
+            details.map(detail=><tr className="first-colum" key={detail.id}>
             <td className="id-data">
-              1645 <i className="fas fa-eye"></i>
+              {detail.id} <i className="fas fa-eye"></i>
             </td>
-            <td className="name-data">Free code Camp for example some text will be go here </td>
-            <td className="type-data">Fixed</td>
-            <td className="type-data">1.6$ per Lead</td>
-            <td className="type-data">0.04</td>
+            <td className="name-data">{detail.name.slice(0,50)}</td>
+            <td className="type-data">{detail.type}</td>
+            <td className="type-data">{detail.rates}</td>
+            <td className="type-data">{detail.EPC}</td>
             <td className="type-data">
               <i className="fas fa-copy"></i>
               <i className="fas fa-mobile-android"></i>
@@ -271,7 +286,8 @@ const Traffic = () => {
               <i className="fas fa-desktop"></i>
               <i className=" fab fa-facebook-square"></i>
             </td>
-          </tr>
+          </tr>)
+          }
         </table>
       </div>
     </div>
