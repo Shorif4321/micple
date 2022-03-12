@@ -88,12 +88,12 @@ const Traffic = () => {
     <div className="container mt-5">
       {/* ==== Search Bar start === */}
       <div className="search-item mb-lg-3 mb-lg-5 row">
-        <div className="col-4 col-sm-2 col-md-2">
+        <div className="col-3 col-sm-3 col-md-2">
           <label htmlFor="" className="searchText col-form-label">
             Searching for
           </label>
         </div>
-        <div className="col-sm-9 col-md-10">
+        <div className="col-12 col-sm-9 col-md-10">
           <form className="">
             <input
               onChange={handleSearch}
@@ -110,12 +110,12 @@ const Traffic = () => {
       <div className="trafficType d-md-flex ">
         <div className="col-md-5 ">
           <div className="mb-3 row d-flex">
-            <div className="col-4 col-sm-3 col-md-4">
+            <div className="col-3 col-sm-3 col-md-4">
               <label htmlFor="" className="searchText me-4 col-form-label">
                 Traffic Type
               </label>
             </div>
-            <div className="col-sm-9  col-md-8">
+            <div className="col-12 col-sm-9  col-md-8">
               <select
                 className="form-select searchField"
                 aria-label="Default select example"
@@ -137,7 +137,7 @@ const Traffic = () => {
                 Geography
               </label>
             </div>
-            <div className="col-sm-9 col-md-8">
+            <div className="col-12 col-sm-9 col-md-8">
               <select
                 className="form-select searchField"
                 aria-label="Default select example"
