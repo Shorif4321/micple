@@ -48,27 +48,61 @@
     box-shadow: 0 0 6px rgb(152, 158, 161);
     padding: 10px;
 }
-table th{
-
+.table-header{
+    background-color:rgba(0, 0, 0, 0.075);
+    margin: 10px 10px;
 }
-table tr{
 
+th{
+    padding: 10px 45px;
 }
+
 table tr:hover{
     background-color: rgba(0, 0, 0, 0.075);
-
 }
 
 table td{
-    padding: 10px 15px;
+    padding: 10px 0px;
     text-align: justify;
 }
-
-.fa-eye{
-    margin-left: 15px;
+.id-data{
+    text-align: center;
+}
+.name-data{
+    text-align:center;
+    color: #0048BA;
+    width: 50%;
+    font-weight: 400;
+    font-family: system-ui;
+}
+.type-data{
+    text-align: center;
 }
 
+.fas, .fab{
+    color: gray;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 667px) {
+    th{
+        padding: 5px 10px;
+    }
+    table td{
+        padding: 10px 0px;
+        text-align: left;
+    }
     
-.table>:not(caption)>*>* {
-    border-bottom-width: 0px
+  }
+  @media only screen and (max-width:991px) and (min-width:668px){
+    th{
+        padding: 10px 30px;
+    }
+  }
+
+  
+  @media only screen and (max-width: 1286px) and (min-width:992px) {
+    th{
+        padding: 7px 5px;
+    }
 }

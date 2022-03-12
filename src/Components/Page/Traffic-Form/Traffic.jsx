@@ -1,20 +1,89 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Traffic.css";
 
 const Traffic = () => {
+
+  const [trafficTypes, setTrafficTypes] = useState([]);
+  const [countrys, setCountrys] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [sbuCategories, setsubCategories] = useState([]);
+  const [cpas, setCpas] = useState([]);
+  const [traffics, setTraffics] = useState([]);
+
+  useEffect(() => {
+    fetch("./Traffic.JSON")
+      .then(res => res.json())
+      .then(data => setTrafficTypes(data))
+  }, []);
+
+  useEffect(() => {
+    fetch("./Country.JSON")
+      .then(res => res.json())
+      .then(data => setCountrys(data))
+  }, []);
+
+  useEffect(() => {
+    fetch("./Categories.JSON")
+      .then(res => res.json())
+      .then(data => setCategories(data))
+  }, []);
+
+  useEffect(() => {
+    fetch("./Subcategorie.JSON")
+      .then(res => res.json())
+      .then(data => setsubCategories(data))
+  }, []);
+
+  useEffect(() => {
+    fetch("./Cpa.JSON")
+      .then(res => res.json())
+      .then(data => setCpas(data))
+  }, []);
+
+  useEffect(() => {
+    fetch("./Filter.JSON")
+      .then(res => res.json())
+      .then(data => setTraffics(data))
+  }, []);
+
+  const handleTrafficType = (e) =>{
+    const value = e.target.value;
+    console.log(value);
+  }
+  const handleGeography = (e) =>{
+    const value = e.target.value;
+    console.log(value);
+  }
+  const handleCategory = (e) =>{
+    const value = e.target.value;
+    console.log(value);
+  }
+  const handleSubCategory = (e) =>{
+    const value = e.target.value;
+    console.log(value);
+  }
+  const handleFilter = (e) =>{
+    const value = e.target.value;
+    console.log(value);
+  }
+  const handleCPA = (e) =>{
+    const value = e.target.value;
+    console.log(value);
+  }
+
   return (
-    <div className="container mt-5 ">
+    <div className=" container mt-5 ">
       {/* ==== Search Bar start === */}
-      <div class="mb-3 row d-flex">
+      <div className="mb-3 row">
         <div className="col-sm-2">
-          <label for="" class="searchText col-form-label">
+          <label htmlFor="" className="searchText col-form-label">
             Searching for
           </label>
         </div>
-        <div class="col-sm-10">
-          <form class="">
+        <div className="col-sm-10">
+          <form className="">
             <input
-              class="searchField form-control me-2"
+              className="searchField form-control me-2"
               placeholder="Enter the Company Name, Keyword or Designation"
               type="search"
               aria-label="Search"
@@ -26,42 +95,46 @@ const Traffic = () => {
       {/* ==== Traffic type start  === */}
       <div className="trafficType d-md-flex mt-5">
         <div className="col-md-5 ">
-          <div class="mb-3 row d-flex">
+          <div className="mb-3 row d-flex">
             <div className="col-md-4">
-              <label for="" class="searchText me-4 col-form-label">
+              <label htmlFor="" className="searchText me-4 col-form-label">
                 Traffic Type
               </label>
             </div>
-            <div class="col-sm-8">
+            <div className="col-sm-8">
               <select
-                class="form-select searchField"
+                className="form-select searchField"
                 aria-label="Default select example"
+                onChange={handleTrafficType}
               >
-                <option selected>Select your Types</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>Select Your Type</option>
+                {
+                  trafficTypes?.map(trafficType => <option defaultValue={trafficType.name} key={trafficType.name}>{trafficType.name}</option>)
+                }
               </select>
             </div>
           </div>
         </div>
 
         <div className="col-md-5">
-          <div class="mb-3 row d-flex">
+          <div className="mb-3 row d-flex">
             <div className="col-md-4">
-              <label for="" class="searchText">
+              <label htmlFor="" className="searchText">
                 Geography
               </label>
             </div>
-            <div class="col-md-8">
+            <div className="col-md-8">
               <select
-                class="form-select searchField"
+                className="form-select searchField"
                 aria-label="Default select example"
+                onChange={handleGeography}
               >
+                {/* Country name */}
                 <option selected>Any Country</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                {
+                  countrys?.map(county => <option value={county.name} key={county.name}>{county.name}</option>)
+                }
+
               </select>
             </div>
           </div>
@@ -72,43 +145,45 @@ const Traffic = () => {
 
       <div className="trafficType d-md-flex mt-5">
         <div className="col-md-5 ">
-          <div class="mb-3 row d-flex">
+          <div className="mb-3 row d-flex">
             <div className="col-md-4">
-              <label for="" class="searchText me-4 col-form-label">
+              <label htmlFor="" className="searchText me-4 col-form-label">
                 Category
               </label>
             </div>
-            <div class="col-sm-8">
+            <div className="col-sm-8">
               <select
-                class="form-select searchField"
+                className="form-select searchField"
                 aria-label="Default select example"
+                onChange={handleCategory}
               >
-                <option selected>Select your Types</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>All Categories</option>
+                {
+                  categories?.map(category => <option value={category.name} key={category.id}>{category.name}</option>)
+                }
               </select>
             </div>
           </div>
         </div>
 
         <div className="col-md-5">
-          <div class="mb-3 row d-flex">
+          <div className="mb-3 row d-flex">
             <div className="col-md-4">
-              <label for="" class="searchText  col-form-label">
+              <label htmlFor="" className="searchText  col-form-label">
                 Sub Category
               </label>
             </div>
 
-            <div class="col-md-8">
+            <div className="col-md-8">
               <select
-                class="form-select searchField"
+                className="form-select searchField"
                 aria-label="Default select example"
+                onChange={handleSubCategory}
               >
-                <option selected>Any Country</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>All Sub Categories</option>
+                {
+                  sbuCategories?.map(subCategory => <option value={subCategory.name} key={subCategory.id}>{subCategory.name}</option>)
+                }
               </select>
             </div>
           </div>
@@ -118,42 +193,44 @@ const Traffic = () => {
       {/* +++ Filter Option ++++ */}
       <div className="trafficType d-md-flex mt-5">
         <div className="col-md-5 ">
-          <div class="mb-3 row d-flex">
+          <div className="mb-3 row d-flex">
             <div className="col-md-4">
-              <label for="" class="searchText me-4 col-form-label">
+              <label htmlFor="" className="searchText me-4 col-form-label">
                 Filter
               </label>
             </div>
-            <div class="col-sm-8">
+            <div className="col-sm-8">
               <select
-                class="form-select searchField"
+                className="form-select searchField"
                 aria-label="Default select example"
+                onChange={handleFilter}
               >
-                <option selected>Select your Types</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>Select for Filter</option>
+                {
+                  traffics?.map(traffic => <option value={traffic.name} key={traffic.id}>{traffic.name}</option>)
+                }
               </select>
             </div>
           </div>
         </div>
 
         <div className="col-md-5">
-          <div class="mb-3 row d-flex">
+          <div className="mb-3 row d-flex">
             <div className="col-md-4">
-              <label for="" class="searchText">
+              <label htmlFor="" className="searchText">
                 CPA Type
               </label>
             </div>
-            <div class="col-md-8">
+            <div className="col-md-8">
               <select
-                class="form-select searchField"
+                className="form-select searchField"
                 aria-label="Default select example"
-              >
-                <option selected>Any Country</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                onChange={handleCPA}
+             >
+                <option selected>Select YOur CPA</option>
+                {
+                  cpas?.map(cpa => <option value={cpa.name} key={cpa.id}>{cpa.name}</option>)
+                }
               </select>
             </div>
           </div>
@@ -165,13 +242,12 @@ const Traffic = () => {
         <button className="apply-button">Apply Search Button</button>
       </div>
 
-      <div className="m-5 p-5"></div>
+      <div className="m-5"></div>
 
-      {/* === campaign section start ==== */}
-
-      <div className="container">
-        <table className="table-box">
-          <tr>
+      {/* === Table start ==== */}
+      <div className="">
+        <table className="">
+          <tr className="table-header">
             <th>ID</th>
             <th>Name</th>
             <th>Types</th>
@@ -179,65 +255,24 @@ const Traffic = () => {
             <th>EPC</th>
             <th>Traffic</th>
           </tr>
-          <tr>
-            <td>
-              1645 <i class="fas fa-eye"></i>
+          <tr className="first-colum">
+            <td className="id-data">
+              1645 <i className="fas fa-eye"></i>
             </td>
-            <td>Freecode Camp</td>
-            <td>Fixed</td>
-            <td>1.6$ per Lead</td>
-            <td>0.04</td>
-            <td>
-            <i class="fas fa-copy"></i>
-              <i class="fas fa-mobile-android"></i>
-              <i class="fas fa-images"></i>
-              <i class="fas fa-search"></i>
-              <i class="fas fa-desktop"></i>
-              <i class="fab fa-facebook-square"></i>
+            <td className="name-data">Free code Camp for example some text will be go here </td>
+            <td className="type-data">Fixed</td>
+            <td className="type-data">1.6$ per Lead</td>
+            <td className="type-data">0.04</td>
+            <td className="type-data">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-mobile-android"></i>
+              <i className="fas fa-images"></i>
+              <i className="fas fa-search"></i>
+              <i className="fas fa-desktop"></i>
+              <i className=" fab fa-facebook-square"></i>
             </td>
-          </tr>
-          <tr>
-            <td>W3Schools</td>
-            <td>Academind</td>
-            <td>Programming Hero</td>
-          </tr>
-          <tr>
-            <td>Khan Academy</td>
-            <td>The Coding Train</td>
-            <td>Solo learn</td>
           </tr>
         </table>
-
-        {/*  <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Campaign Type</th>
-              <th scope="col">CPA Type</th>
-              <th scope="col">CPA Rate</th>
-              <th scope="col">EPC</th>
-              <th scope="col">Traffic</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1245 <i class="ps-2 fas fa-eye"></i></td>
-              <td>National consumer Center - Get a visa card - One Field</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>@fat</td>
-              <td>@fat</td>
-            </tr>
-           
-          </tbody>
-        </table> */}
       </div>
     </div>
   );
