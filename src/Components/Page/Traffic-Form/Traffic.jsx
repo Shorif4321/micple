@@ -121,7 +121,7 @@ const Traffic = () => {
                 aria-label="Default select example"
                 onChange={handleTrafficType}
               >
-                <option selected>Select Your Type</option>
+                <option defaultValue="">Select Your Type</option>
                 {
                   trafficTypes?.map(trafficType => <option defaultValue={trafficType.name} key={trafficType.name}>{trafficType.name}</option>)
                 }
@@ -144,7 +144,7 @@ const Traffic = () => {
                 onChange={handleGeography}
               >
                 {/* Country name */}
-                <option selected>Any Country</option>
+                <option defaultValue="">Any Country</option>
                 {
                   countrys?.map(county => <option value={county.name} key={county.name}>{county.name}</option>)
                 }
@@ -171,7 +171,7 @@ const Traffic = () => {
                 aria-label="Default select example"
                 onChange={handleCategory}
               >
-                <option selected>All Categories</option>
+                <option defaultValue="">All Categories</option>
                 {
                   categories?.map(category => <option value={category.name} key={category.id}>{category.name}</option>)
                 }
@@ -194,7 +194,7 @@ const Traffic = () => {
                 aria-label="Default select example"
                 onChange={handleSubCategory}
               >
-                <option selected>All Sub Categories</option>
+                <option defaultValue="">All Sub Categories</option>
                 {
                   sbuCategories?.map(subCategory => <option value={subCategory.name} key={subCategory.id}>{subCategory.name}</option>)
                 }
@@ -219,7 +219,7 @@ const Traffic = () => {
                 aria-label="Default select example"
                 onChange={handleFilter}
               >
-                <option selected>Select for Filter</option>
+                <option defaultValue="">Select for Filter</option>
                 {
                   traffics?.map(traffic => <option value={traffic.name} key={traffic.id}>{traffic.name}</option>)
                 }
@@ -241,7 +241,7 @@ const Traffic = () => {
                 aria-label="Default select example"
                 onChange={handleCPA}
              >
-                <option selected>Select YOur CPA</option>
+                <option defaultValue="">Select YOur CPA</option>
                 {
                   cpas?.map(cpa => <option value={cpa.name} key={cpa.id}>{cpa.name}</option>)
                 }
@@ -261,6 +261,7 @@ const Traffic = () => {
       {/* === Table start ==== */}
       <div className="">
         <table className="">
+          <tbody>
           <tr className="table-header">
             <th>ID</th>
             <th>Name</th>
@@ -286,8 +287,11 @@ const Traffic = () => {
               <i className="fas fa-desktop"></i>
               <i className=" fab fa-facebook-square"></i>
             </td>
-          </tr>)
+
+          </tr>
+          )
           }
+          </tbody>
         </table>
       </div>
     </div>
