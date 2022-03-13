@@ -259,6 +259,30 @@ const Campinformation = () => {
 
                         <div className='traffic-select'>
                             <h4>3. Select a Creative</h4>
+                            <div className='subid-add'>
+                                <label htmlFor="">Sub ID: 1</label>
+                                <input type="text" />
+                            </div>
+                            <div className='subid-add'>
+                                <label htmlFor="">Sub ID: 2</label>
+                                <input type="text" />
+                            </div>
+                            <div className='subid-add'>
+                                <label htmlFor="">Sub ID: 3</label>
+                                <input type="text" />
+                            </div>
+                            <div className='subid-add'>
+                                <label htmlFor="">Sub ID: 4</label>
+                                <input type="text" />
+                            </div>
+                            <div className='subid-add'>
+                                <label htmlFor="">Sub ID: 5</label>
+                                <input type="text" />
+                            </div>
+                            <div className='subid-add'>
+                                <label htmlFor="">Sub ID: 6</label>
+                                <input type="text" />
+                            </div>
                             
                         </div>
                         

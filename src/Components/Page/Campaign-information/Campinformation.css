@@ -265,3 +265,19 @@ table td{
     width: 15px;
     height: 15px;
 }
+.subid-add{
+    text-align: left;
+    padding: 20px;
+    
+}
+.subid-add label{
+    margin-right: 20px;
+    font-family: system-ui;
+
+
+}
+.subid-add input{
+    width: auto;
+    height: 40px;
+
+}
