@@ -85,11 +85,11 @@ const Traffic = () => {
   }
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 ">
       {/* ==== Search Bar start === */}
-      <div className="search-item mb-lg-3 mb-lg-5 row">
+      <div className="search-item mb-lg-3 row ">
         <div className="col-3 col-sm-3 col-md-2">
-          <label htmlFor="" className="searchText col-form-label">
+          <label htmlFor="" className="input-label searchText col-form-label">
             Searching for
           </label>
         </div>
@@ -105,13 +105,13 @@ const Traffic = () => {
           </form>
         </div>
       </div>
-
+    
       {/* ==== Traffic type start  === */}
       <div className="trafficType d-md-flex ">
         <div className="col-md-5 ">
           <div className="mb-3 row d-flex">
             <div className="col-3 col-sm-3 col-md-4">
-              <label htmlFor="" className="searchText me-4 col-form-label">
+              <label htmlFor="" className="searchText me-4 col-form-label  ">
                 Traffic Type
               </label>
             </div>

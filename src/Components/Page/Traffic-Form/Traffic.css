@@ -1,5 +1,13 @@
 .search-item{
+    padding: 0px 105px 0px 110px
 }
+
+.input-label {
+        margin: 0 0 0 -10px;
+    }
+.input-label-filter {
+        margin: 0 0 0 -15px;
+    }
 
 .searchText{
     font-size: large;
@@ -119,5 +127,8 @@ table td{
   @media only screen and (max-width: 1200px) and (min-width:992px) {
     th{
         padding: 10px 38px;
+    }
+    .search-item{
+        padding: 0px 78px 0px 83px;
     }
 }
