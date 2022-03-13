@@ -5,22 +5,26 @@
 }
 .left{
     width: 45%;
+   
 }
 .left-side{
-   
     background-color: white;
     padding: 0px;
     margin: 0px 10px 0px 0px;
     border: 1px solid #6666;
     border-radius: 5px;
 }
-.right-side{
+.right{
     width: 55%;
+    padding: 0 0 0 10px;
+}
+.right-side{
     background-color: #EAEDF2;
-    padding: 10px;
-    margin: 0px 0px 0px 10px;
+    border: 1px solid #6666;
+    border-radius: 5px;
 
 }
+
 .camp-main{
     display: flex;
     justify-content: space-between;
@@ -131,20 +135,133 @@
 
 .rates-main{
     margin-top: 20px;
+    background-color: #F2F2F2;
 }
-.rate-head,.rate-head2{
+.rate-type{
+    padding: 0 0 10px 50px;
+}
+.rate-head{
     display: flex;
     font-family: system-ui;
     padding: 0 20px;
     justify-content: space-between;
-
+    background-color: white;
+    border-bottom: 1px solid #d3cccc;
+}
+.rate-head2{
+    display: flex;
+    font-family: system-ui;
+    padding: 0 20px;
+    justify-content: space-between;
+    background-color: #F2F2F2;
+    margin-top: 12px;
+    
 }
 .rate-head p{
     font-weight: 500;
+    margin-top: 12px;
 }
 table td{
+    margin-top: 12px;
     text-align: center;
 }
 .fixed{
   padding-left: 60px;
+}
+.style-under{
+    border-bottom: 1px solid #d3cccc;
+}
+
+.expire-upper{
+    display: flex;
+}
+.custom-details{
+    background-color: #F2F2F2;
+    margin-top: 0;
+    padding-top: 15px;
+}
+.custom-landing{
+    margin-bottom: 0px;
+    padding-bottom: 15px;
+}
+.custom-bg{
+    background-color: white;
+}
+.camp-description{
+    padding: 13px 20px;
+    text-align: left;
+    background-color: #F2F2F2;
+    font-weight: 500;
+    font-family: system-ui;
+    border-bottom: 1px solid #d3cccc;
+   
+}
+.camp-details{
+    text-align: left; 
+    padding:10px 20px;
+    margin: 0;
+    text-align: justify;
+    background-color: white;
+
+}
+.res-sear{
+    margin-top: 20px;
+}
+.res-details{
+    margin: 0px;
+}
+.link-generate{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d3cccc;
+    background-color: white;
+    
+   
+}
+.link-copy{
+    padding: 10px 20px 10px 0;
+}
+.copy-icon{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+}
+.link-url{
+    padding: 10px 0px 2px 2px;
+    margin-right: 20px;
+    border-radius: 5px;
+    align-items: center;
+    text-align: right;
+    background-color: rgb(22 21 21 / 85%);
+}
+
+.traffic-select{
+    background-color: white;
+    padding: 0px 0px 40px 0px;
+    border-bottom: 1px solid #d3cccc;
+}
+.traffic-select h4{
+    background-color: white;
+    margin-bottom: 0;
+    padding: 40px 15px 20px 20px;
+    text-align: left;
+
+}
+.input-add{
+    border: 1px solid black;
+    padding: 5px 8px;
+    border-radius: 5px;
+    width:fit-content;
+    margin: 5px;
+    display: inline-block;
+
+}
+.input-add label{
+    margin-left: 5px;
+    margin-top: 0;
+}
+.input-add input{
+    width: 15px;
+    height: 15px;
 }
