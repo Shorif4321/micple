@@ -1,0 +1,150 @@
+.main-section{
+    background-color: #EAEDF2;
+    display: flex;
+    padding: 10px;
+}
+.left{
+    width: 45%;
+}
+.left-side{
+   
+    background-color: white;
+    padding: 0px;
+    margin: 0px 10px 0px 0px;
+    border: 1px solid #6666;
+    border-radius: 5px;
+}
+.right-side{
+    width: 55%;
+    background-color: #EAEDF2;
+    padding: 10px;
+    margin: 0px 0px 0px 10px;
+
+}
+.camp-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.camp-main p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.campaign-info{
+    font-size: 20px;
+    margin: 0;
+    color: black;
+    font-family: system-ui;
+    font-weight: 500;
+    text-align: justify;
+
+}
+.remove-bookmark{
+    background-color: #FEC107;
+    padding: 20px 30px;
+    border-radius: 5px;
+    color: black;
+
+}
+.fas{
+    color: black !important;
+}
+
+/* bannar image */
+.bannar-img{
+    padding: 15px 0;
+    margin-top: 25px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #d3cccc;
+    border-bottom: 1px solid #d3cccc;
+}
+.user-id{
+    text-align: left;
+    padding:0 0 18px 20px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-family: system-ui;
+    border-bottom: 1px solid #d3cccc;
+}
+
+/* Traffic type */
+.traffic-main{
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d3cccc;
+    padding:0 0 0 0;
+    
+}
+.traffic-type{
+    width: 20%;
+    
+}
+.traffic-type p{
+    text-align: left;
+    padding: 0 0 0 20px;
+
+}
+.traffic-items{
+    width: 80%;
+    padding-bottom: 18px;
+}
+.item{
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 30px;
+    border: 1px solid rgb(32, 30, 30);
+    color: rgb(48, 42, 42);
+    margin: 5px 5px;
+}
+.item-dif{
+    display: inline-block;
+    padding: 6px 15px;
+    margin: 5px 5px;
+    text-decoration: line-through;
+}
+
+.text-main{
+    display: flex;
+    border-bottom: 1px solid #d3cccc;
+}
+.text-pad{
+    margin-top: 20px;
+}
+
+.text-left{
+    width: 20%;
+    text-align: left;
+}
+.text-left p{
+    padding: 0px 0px 0px 20px;
+
+}
+.text-right{
+    width: 80%;
+    text-align: left;
+    padding: 0 0 0 45px;
+
+}
+
+.rates-main{
+    margin-top: 20px;
+}
+.rate-head,.rate-head2{
+    display: flex;
+    font-family: system-ui;
+    padding: 0 20px;
+    justify-content: space-between;
+
+}
+.rate-head p{
+    font-weight: 500;
+}
+table td{
+    text-align: center;
+}
+.fixed{
+  padding-left: 60px;
+}
