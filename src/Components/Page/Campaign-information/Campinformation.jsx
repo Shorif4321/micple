@@ -104,7 +104,7 @@ const Campinformation = () => {
                         <p className='user-id rate-type custom-landing'>Creatives</p>
                         <div className='rate-head '>
                             <p >Text Link</p>
-                            <p >Preview <i className="fas fa-people-carry"></i></p>
+                            <p >View </p>
                         </div>
                         <div className='rate-head '>
                             <p >Bannar</p>
