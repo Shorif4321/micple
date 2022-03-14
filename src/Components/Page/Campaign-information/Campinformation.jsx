@@ -3,34 +3,74 @@ import './Campinformation.css';
 import bannarImg from '../Images/banner.png'
 
 const Campinformation = () => {
+
     const handleContextual = (e) => {
-        const field = e.target.value;
-        console.log(field);
+        const Contextual = e.target.value;
+        console.log(Contextual);
     }
-    const handleSubID1=(e)=>{
+    const handleDisplay = (e) => {
+        const Display = e.target.value;
+        console.log(Display);
+    }
+
+    const handleSubID1 = (e) => {
         const subID1 = e.target.value;
         console.log(subID1);
     }
-    const handleSubID2=(e)=>{
+    const handleSubID2 = (e) => {
         const subID2 = e.target.value;
         console.log(subID2);
     }
-    const handleSubID3=(e)=>{
+    const handleSubID3 = (e) => {
         const subID3 = e.target.value;
         console.log(subID3);
     }
-    const handleSubID4=(e)=>{
+    const handleSubID4 = (e) => {
         const subID4 = e.target.value;
         console.log(subID4);
     }
-    const handleSubID5=(e)=>{
+    const handleSubID5 = (e) => {
         const subID5 = e.target.value;
         console.log(subID5);
     }
-    const handleSubID6=(e)=>{
+    const handleSubID6 = (e) => {
         const subID6 = e.target.value;
         console.log(subID6);
     }
+
+    const trafficTypes = [
+        { name: 'Contextual' },
+        { name: 'Display' },
+        { name: 'Search' },
+        { name: 'Social' },
+        { name: 'Native' },
+        { name: 'Mobile Ads' },
+        { name: 'Email' },
+        { name: 'Incentive' },
+        { name: 'Brand Bidding' }
+    ]
+    const status = [
+        { tittle: 'Your Daily Cap', name: '20 USD Per Day' },
+        { tittle: 'Countrys Allowed', name: 'United State' },
+        { tittle: 'Device', name: 'All Device are supported' }
+    ]
+    const pages = [
+        { tittle: 'Simple', name: 'Preview' },
+        { tittle: 'Initial (Default)', name: 'All Device are supported' }
+    ]
+    const Creatives = [
+        { tittle: 'Top LINk', name: 'View' },
+        { tittle: 'Bannar', name: 'View' },
+        { tittle: 'Solo E-mail (Text)', name: 'View' },
+        { tittle: 'Solo E-mail ( HTML)', name: 'View' }
+    ]
+
+    const details = [
+        { tittle: 'Network EPC', name: '0.03' },
+        { tittle: 'Expire Date', name: 'No expiry' },
+        { tittle: 'Tracking typ', name: 'Server-to-server tracking' }
+    ]
+
     return (
         <div>
             <section className='main-section'>
@@ -56,48 +96,27 @@ const Campinformation = () => {
                                 <p>Allowed TRaffic Types</p>
                             </div>
                             <div className='traffic-items'>
-                                <p className='item'>Contextual</p>
-                                <p className='item'>Display</p>
-                                <p className='item'>Search</p>
-                                <p className='item'>Social</p>
-                                <p className='item'>Native</p>
-                                <p className='item'>Mobile Ads</p>
-                                <p className='item'>Email</p>
-                                <p className='item-dif'>Incentive</p>
-                                <p className='item'>Brand Bidding</p>
+                                {
+                                    trafficTypes.map(traffic => <p key={traffic.name} className='item' >{traffic.name}</p>)
+                                }
                             </div>
                         </div>
 
+                          {/* === User Status === */}       
                         <div>
                             <p className='user-id'>Your Status :</p>
                         </div>
-
-                        <div className='text-main'>
-                            <div className='text-left'>
-                                <p>Your Daily Cap</p>
-                            </div>
-                            <div className='text-right'>
-                                20 action per day
-                            </div>
-                        </div>
-
-                        <div className='text-main text-pad'>
-                            <div className='text-left'>
-                                <p>Countries Allowed</p>
-                            </div>
-                            <div className='text-right'>
-                                United States
-                            </div>
-                        </div>
-
-                        <div className='text-main text-pad'>
-                            <div className='text-left'>
-                                <p>Device</p>
-                            </div>
-                            <div className='text-right'>
-                                All Device operating system allowed
-                            </div>
-                        </div>
+                        {
+                            status.map(stata =>
+                                <div key={stata.name} className='text-main text-pad'>
+                                    <div className='text-left'>
+                                        <p>{stata.tittle}</p>
+                                    </div>
+                                    <div className='text-right'>
+                                        <p>{stata.name}</p>
+                                    </div>
+                                </div>)
+                        }
 
 
                     </div>
@@ -118,70 +137,37 @@ const Campinformation = () => {
 
                     <div className='left-side rates-main'>
                         <p className='user-id rate-type custom-landing'>Landing Page</p>
-                        <div className='rate-head '>
-                            <p className=''>Sample</p>
-                            <a href="#" target='_blank'> <p >Preview <i className="fas fa-clone"></i></p></a>
-                        </div>
-                        <div className='rate-head '>
-                            <p >Initial (Default)</p>
-                            <a href="#" target='_blank'> <p >Preview <i className="fas fa-clone"></i></p></a>
-                        </div>
+                        {
+                            pages.map(page=><div className='rate-head '>
+                            <p className=''>{page.tittle}</p>
+                            <a href="#" target='_blank'> <p >{page.name} <i className="fas fa-clone"></i></p></a>
+                        </div>)
+                        }
                     </div>
 
                     <div className='left-side rates-main'>
                         <p className='user-id rate-type custom-landing'>Creatives</p>
-                        <div className='rate-head '>
-                            <p >Text Link</p>
-                            <a href='#' target="_blank"> <p >View </p></a>
-                        </div>
-                        <div className='rate-head '>
-                            <p >Bannar</p>
-                            <a href='#' target="_blank"> <p >View </p></a>
-                        </div>
-                        <div className='rate-head '>
-                            <p >Solo E-mail (text)</p>
-                            <a href='#' target="_blank"> <p >View </p></a>
-                        </div>
-                        <div className='rate-head '>
-                            <p >Solo E-mail (html)</p>
-                            <a href='#' target="_blank"> <p >View </p></a>
-                        </div>
+                        {Creatives.map(creative => <div className='rate-head'>
+                            <p>{creative.tittle}</p>
+                            <a href='#' target="_blank"> <p >{creative.name}</p></a>
+                        </div>)}
                     </div>
 
                     <div className='left-side rates-main custom-bg'>
                         <p className='user-id rate-type custom-details'>Details</p>
-                        <div className='text-main'>
-                            <div className='text-left'>
-                                <p>Network EPC</p>
-                            </div>
-                            <div className='text-right'>
-                                0.03
-                            </div>
-                        </div>
-
-                        <div className='text-main'>
-                            <div className='text-left'>
-                                <p>Expire Date</p>
-                            </div>
-                            <div className='text-right'>
-                                No expiry
-                            </div>
-                        </div>
-
-                        <div className='text-main'>
-                            <div className='text-left'>
-                                <p>Tracking type</p>
-                            </div>
-                            <div className='text-right'>
-                                Server-to-server tracking
-                            </div>
-                        </div>
+                        {
+                            details.map(stata =>
+                                <div key={stata.name} className='text-main text-pad'>
+                                    <div className='text-left'>
+                                        <p>{stata.tittle}</p>
+                                    </div>
+                                    <div className='text-right'>
+                                        <p>{stata.name}</p>
+                                    </div>
+                                </div>)
+                        }
                     </div>
-
                 </div>
-
-
-
 
                 {/* === right side start */}
                 <div className='right '>
@@ -205,38 +191,23 @@ const Campinformation = () => {
                     <div className='res-sear right-side '>
                         <div className='traffic-select'>
                             <h4>1. What type of Traffic do you want to sending</h4>
-                            <div className='input-add'>
-                                <input onChange={handleContextual} type="radio" id="Contextual" name="micple" value="Contextual"
-                                />
-                                <label htmlFor="Contextual">Contextual</label>
-                            </div>
-                            <div className='input-add'>
-                                <input type="radio" id="Display" name="micple" value="Display"
-                                />
-                                <label htmlFor="Display">Display</label>
+                            <div className='traffic-input'>
+                                <div className='input-add'>
+                                    <input onChange={handleContextual} type="radio" id="Contextual" name="micple" value="Contextual"
+                                    />
+                                    <label htmlFor="Contextual">Contextual</label>
+                                </div>
+                                <div className='input-add'>
+                                    <input onChange={handleDisplay} type="radio" id="Display" name="micple" value="Display"
+                                    />
+                                    <label htmlFor="Display">Display</label>
+                                </div>
                             </div>
                             <div className='radio-input'>
-                               <input type="text" />
+                                <input type="text" placeholder='Search' />
                             </div>
                         </div>
 
-                        <div className='traffic-select'>
-                            <h4>2. Select a Creative</h4>
-                            <div className='input-add'>
-                                <input type="radio" id="link" name="creative" value="link" />
-                                <label htmlFor="link">Row link</label>
-                            </div>
-
-                            <div className='input-add'>
-                                <input type="radio" id="Search-creative" name="creative" value="Search-creative"
-                                />
-                                <label htmlFor="Search-creative">Search</label>
-                                
-                            </div>
-                            <div className='radio-input'>
-                               <input type="text" />
-                            </div>
-                        </div>
 
                         <p className='camp-description custom-landing'>Your Tracking link</p>
                         <div className='camp-details link-generate'>
@@ -267,7 +238,7 @@ const Campinformation = () => {
                                 <input onChange={handleSubID4} type="text" />
                             </div>
                             <div className='subid-add'>
-                                <label  htmlFor="">Sub ID: 5</label>
+                                <label htmlFor="">Sub ID: 5</label>
                                 <input onChange={handleSubID5} type="text" />
                             </div>
                             <div className='subid-add'>

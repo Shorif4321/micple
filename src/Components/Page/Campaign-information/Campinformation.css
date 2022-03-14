@@ -116,6 +116,8 @@
 }
 .text-pad{
     margin-top: 20px;
+    padding: 0 0 0 20px
+;
 }
 
 .text-left{
@@ -123,13 +125,15 @@
     text-align: left;
 }
 .text-left p{
-    padding: 0px 0px 0px 20px;
-
+   
 }
 .text-right{
     width: 80%;
     text-align: left;
     padding: 0 0 0 45px;
+
+}
+.text-right p{
 
 }
 
@@ -162,7 +166,7 @@ a{
     
 }
 .rate-head p{
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 12px;
 }
 table td{
@@ -243,6 +247,10 @@ table td{
     padding: 0px 0px 40px 0px;
     border-bottom: 1px solid #d3cccc;
 }
+.traffic-input{
+    display: flex;
+    margin: 0 0  0 60px;
+}
 .traffic-select h4{
     background-color: white;
     margin-bottom: 0;
@@ -255,7 +263,8 @@ table td{
     padding: 5px 8px;
     border-radius: 5px;
     width:fit-content;
-    margin: 10px 0 0 70px;
+    display: inline-block;
+    margin: 0px 0px 0 10px;
 }
 .radio-input{
     text-align: left;
@@ -265,6 +274,8 @@ table td{
 }
 .radio-input input{
     height: 40px;
+    width: 112%;
+    text-align: center;
 }
 
 .input-add label{
