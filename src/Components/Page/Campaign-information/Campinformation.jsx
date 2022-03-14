@@ -191,6 +191,9 @@ const Campinformation = () => {
                                 />
                                 <label htmlFor="Display">Display</label>
                             </div>
+                            <div className='radio-input'>
+                               <input type="text" />
+                            </div>
                         </div>
 
                         <div className='traffic-select'>
@@ -204,6 +207,10 @@ const Campinformation = () => {
                                 <input type="radio" id="Search-creative" name="creative" value="Search-creative"
                                 />
                                 <label htmlFor="Search-creative">Search</label>
+                                
+                            </div>
+                            <div className='radio-input'>
+                               <input type="text" />
                             </div>
                         </div>
 

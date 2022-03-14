@@ -219,8 +219,6 @@ table td{
     align-items: center;
     border-bottom: 1px solid #d3cccc;
     background-color: white;
-    
-   
 }
 .link-copy{
     padding: 10px 20px 10px 0;
@@ -258,9 +256,17 @@ table td{
     border-radius: 5px;
     width:fit-content;
     margin: 10px 0 0 70px;
-
-
 }
+.radio-input{
+    text-align: left;
+    margin: 11px 0px 0px 70px;
+    border: 0px solid black;
+    width: fit-content;
+}
+.radio-input input{
+    height: 40px;
+}
+
 .input-add label{
     margin-left: 5px;
     margin-top: 0;
