@@ -97,7 +97,7 @@
 }
 .item{
     display: inline-block;
-    padding: 6px 15px;
+    padding: 4px 10px;
     border-radius: 30px;
     border: 1px solid rgb(32, 30, 30);
     color: rgb(48, 42, 42);
@@ -147,6 +147,10 @@
     justify-content: space-between;
     background-color: white;
     border-bottom: 1px solid #d3cccc;
+}
+a{
+    text-decoration: none;
+    color: #000;
 }
 .rate-head2{
     display: flex;
@@ -255,6 +259,8 @@ table td{
     width:fit-content;
     margin: 5px;
     display: inline-block;
+    align-items: center;
+
 
 }
 .input-add label{
