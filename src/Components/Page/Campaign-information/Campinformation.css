@@ -236,7 +236,7 @@ table td{
     margin-right: 20px;
     border-radius: 5px;
     align-items: center;
-    text-align: right;
+    text-align: center;
     background-color: rgb(22 21 21 / 85%);
 }
 
@@ -257,9 +257,7 @@ table td{
     padding: 5px 8px;
     border-radius: 5px;
     width:fit-content;
-    margin: 5px;
-    display: inline-block;
-    align-items: center;
+    margin: 10px 0 0 70px;
 
 
 }

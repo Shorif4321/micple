@@ -3,7 +3,7 @@ import './Campinformation.css';
 import bannarImg from '../Images/banner.png'
 
 const Campinformation = () => {
-    const handleContextual = (e)=>{
+    const handleContextual = (e) => {
         const field = e.target.value;
         console.log(field);
     }
@@ -96,11 +96,11 @@ const Campinformation = () => {
                         <p className='user-id rate-type custom-landing'>Landing Page</p>
                         <div className='rate-head '>
                             <p className=''>Sample</p>
-                            <a href="#" target='_blank'> <p >Preview <i className="fas fa-people-carry"></i></p></a>
+                            <a href="#" target='_blank'> <p >Preview <i className="fas fa-clone"></i></p></a>
                         </div>
                         <div className='rate-head '>
                             <p >Initial (Default)</p>
-                            <a href="#" target='_blank'> <p >Preview <i className="fas fa-people-carry"></i></p></a>
+                            <a href="#" target='_blank'> <p >Preview <i className="fas fa-clone"></i></p></a>
                         </div>
                     </div>
 
@@ -179,25 +179,8 @@ const Campinformation = () => {
                     </div>
 
                     <div className='res-sear right-side '>
-                        <p className='camp-description custom-landing'>Your Tracking link</p>
-                        <div className='camp-details link-generate'>
-                            <div className='link-url '>
-                                <p>https://micple.com/signup https://micple.</p>
-                            </div>
-                            <div className='link-copy'>
-                                <p className='res-details copy-icon'><i className="fas fa-clone"></i> Copy Link </p>
-                            </div>
-                        </div>
-
                         <div className='traffic-select'>
                             <h4>1. What type of Traffic do you want to sending</h4>
-                            {/*
-                            <div className='input-add'>
-                                 <input type="radio" />
-                                <label className='' htmlFor="">Display</label>
-                            </div>
-                            */}
-
                             <div className='input-add'>
                                 <input onChange={handleContextual} type="radio" id="Contextual" name="micple" value="Contextual"
                                 />
@@ -207,37 +190,6 @@ const Campinformation = () => {
                                 <input type="radio" id="Display" name="micple" value="Display"
                                 />
                                 <label htmlFor="Display">Display</label>
-                            </div>
-                            <div className='input-add'>
-                                <input type="radio" id="Search" name="micple" value="Search"
-                                />
-                                <label htmlFor="Search">Search</label>
-                            </div>
-                            <div className='input-add'>
-                                <input type="radio" id="Social" name="micple" value="Social"
-                                />
-                                <label htmlFor="Social">Social</label>
-                            </div>
-
-                            <div className='input-add'>
-                                <input  type="radio" id="Native" name="micple" value="Native"
-                                />
-                                <label htmlFor="Native">Native</label>
-                            </div>
-                            <div className='input-add'>
-                                <input type="radio" id="mobile-add" name="micple" value="mobile-add"
-                                />
-                                <label htmlFor="mobile-add">Mobile Add</label>
-                            </div>
-
-                            <div className='input-add'>
-                                <input type="radio" id="Email" name="micple" value="Email" />
-                                <label htmlFor="Email">Email</label>
-                            </div>
-
-                            <div className='input-add'>
-                                <input type="radio" id="Incentive" name="micple" value="Incentive" />
-                                <label htmlFor="Incentive">Incentive</label>
                             </div>
                         </div>
 
@@ -253,46 +205,15 @@ const Campinformation = () => {
                                 />
                                 <label htmlFor="Search-creative">Search</label>
                             </div>
+                        </div>
 
-                            <div className='input-add'>
-                                <input type="radio" id="Contextual-creative" name="creative" value="Contextual-creative"
-                                />
-                                <label htmlFor="Contextual-creative">Contextual</label>
+                        <p className='camp-description custom-landing'>Your Tracking link</p>
+                        <div className='camp-details link-generate'>
+                            <div className='link-url '>
+                                <p>https://micple.com/signup https://micple.</p>
                             </div>
-
-                            <div className='input-add'>
-                                <input type="radio" id="Social-creative" name="creative" value="Social-creative"
-                                />
-                                <label htmlFor="Social-creative">Social</label>
-                            </div>
-
-                            <div className='input-add'>
-                                <input type="radio" id="Text-creative" name="creative" value="Text-creative"
-                                />
-                                <label htmlFor="Text-creative">Text link</label>
-                            </div>
-                            <div className='input-add'>
-                                <input type="radio" id="Banners" name="creative" value="Banners"
-                                />
-                                <label htmlFor="Banners">Banners</label>
-                            </div>
-
-                            <div className='input-add'>
-                                <input type="radio" id="Solo-email" name="creative" value="Solo-email"
-                                />
-                                <label htmlFor="Solo-email">Solo E-mail</label>
-                            </div>
-
-                            <div className='input-add'>
-                                <input type="radio" id="Solo-emailText" name="creative" value="Solo-emailText"
-                                />
-                                <label htmlFor="Solo-emailText">Solo E-mail (text)</label>
-                            </div>
-
-                            <div className='input-add'>
-                                <input type="radio" id="Solo-emailHTML" name="creative" value="Solo-emailHTML"
-                                />
-                                <label htmlFor="Solo-emailHTML">Solo E-mail (html)</label>
+                            <div className='link-copy'>
+                                <p className='res-details copy-icon'><i className="fas fa-clone"></i> Copy Link </p>
                             </div>
                         </div>
 
