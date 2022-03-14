@@ -7,6 +7,30 @@ const Campinformation = () => {
         const field = e.target.value;
         console.log(field);
     }
+    const handleSubID1=(e)=>{
+        const subID1 = e.target.value;
+        console.log(subID1);
+    }
+    const handleSubID2=(e)=>{
+        const subID2 = e.target.value;
+        console.log(subID2);
+    }
+    const handleSubID3=(e)=>{
+        const subID3 = e.target.value;
+        console.log(subID3);
+    }
+    const handleSubID4=(e)=>{
+        const subID4 = e.target.value;
+        console.log(subID4);
+    }
+    const handleSubID5=(e)=>{
+        const subID5 = e.target.value;
+        console.log(subID5);
+    }
+    const handleSubID6=(e)=>{
+        const subID6 = e.target.value;
+        console.log(subID6);
+    }
     return (
         <div>
             <section className='main-section'>
@@ -228,27 +252,27 @@ const Campinformation = () => {
                             <h4>3. Select a Creative</h4>
                             <div className='subid-add'>
                                 <label htmlFor="">Sub ID: 1</label>
-                                <input type="text" />
+                                <input onChange={handleSubID1} type="text" />
                             </div>
                             <div className='subid-add'>
                                 <label htmlFor="">Sub ID: 2</label>
-                                <input type="text" />
+                                <input onChange={handleSubID2} type="text" />
                             </div>
                             <div className='subid-add'>
                                 <label htmlFor="">Sub ID: 3</label>
-                                <input type="text" />
+                                <input onChange={handleSubID3} type="text" />
                             </div>
                             <div className='subid-add'>
                                 <label htmlFor="">Sub ID: 4</label>
-                                <input type="text" />
+                                <input onChange={handleSubID4} type="text" />
                             </div>
                             <div className='subid-add'>
-                                <label htmlFor="">Sub ID: 5</label>
-                                <input type="text" />
+                                <label  htmlFor="">Sub ID: 5</label>
+                                <input onChange={handleSubID5} type="text" />
                             </div>
                             <div className='subid-add'>
                                 <label htmlFor="">Sub ID: 6</label>
-                                <input type="text" />
+                                <input onChange={handleSubID6} type="text" />
                             </div>
 
                         </div>
